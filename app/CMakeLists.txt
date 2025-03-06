@@ -23,6 +23,7 @@ if(APPLE)
   add_custom_command(TARGET app POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
     ${CMAKE_BINARY_DIR}/lib/librectangle.dylib
+    ${CMAKE_BINARY_DIR}/lib/libcircle.dylib
     $<TARGET_FILE_DIR:app>
   )
 
@@ -31,6 +32,7 @@ else()
   add_custom_command(TARGET app POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
     ${CMAKE_BINARY_DIR}/lib/librectangle.so
+    ${CMAKE_BINARY_DIR}/lib/libcircle.so
     $<TARGET_FILE_DIR:app>
   )
 
