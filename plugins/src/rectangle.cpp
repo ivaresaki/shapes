@@ -25,6 +25,11 @@ double Rectangle::get_area() const
   return this->get_width() * this->get_height();
 }
 
+double Rectangle::get_perimeter() const
+{
+  return 2 * (this->get_width() + this->get_height());
+}
+
 std::ostream& Rectangle::print(std::ostream& os) const
 {
   Shape::print(os);

@@ -26,6 +26,11 @@ class Shape
     /// Needs to be overridden by implementing classes
     virtual double get_area() const = 0;
 
+    /// @brief  @brief Returns the perimeter of the shape
+    /// Needs to be overridden by implementing classes
+    /// @return 
+    virtual double get_perimeter() const = 0;
+
     /// @brief Prints the shape to the output stream
     /// @param os 
     /// @return 

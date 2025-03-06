@@ -13,6 +13,7 @@ std::ostream& Shape::print(std::ostream& os) const
 {
   os << "Name: " << this->get_name() << std::endl;
   os << "Area: " << this->get_area() << std::endl;
+  os << "Perimeter: " << this->get_perimeter() << std::endl;
   return os;
 }
 

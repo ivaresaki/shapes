@@ -16,5 +16,6 @@ class Rectangle : public Shape
     double get_height() const;
 
     double get_area() const;
+    double get_perimeter() const;
     std::ostream& print(std::ostream& os) const;
 };
