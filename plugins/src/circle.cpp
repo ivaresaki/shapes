@@ -1,14 +1,19 @@
 #include "circle.hpp"
 
+#ifdef _WIN32
+extern "C" __declspec(dllexport) Shape* create_shape(double radius)
+#else
 extern "C" Shape* create_shape(double radius)
+#endif
 {
   return new Circle(radius);
 }
 
 Circle::Circle(double radius)
-  : Shape("Circle"), radius(radius){}
+  : Shape("Circle"), radius(radius) {
+}
 
-Circle::~Circle(){}
+Circle::~Circle() {}
 
 double Circle::get_radius() const
 {

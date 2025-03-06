@@ -1,14 +1,19 @@
 #include "rectangle.hpp"
 
+#ifdef _WIN32
+extern "C" __declspec(dllexport) Shape* create_shape(double width, double height)
+#else
 extern "C" Shape* create_shape(double width, double height)
+#endif
 {
   return new Rectangle(width, height);
 }
 
 Rectangle::Rectangle(double width, double height)
-  : Shape("Rectangle"), width(width), height(height){}
+  : Shape("Rectangle"), width(width), height(height) {
+}
 
-Rectangle::~Rectangle(){}
+Rectangle::~Rectangle() {}
 
 double Rectangle::get_width() const
 {

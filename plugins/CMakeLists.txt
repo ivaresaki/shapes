@@ -23,6 +23,15 @@ if(APPLE)
     SUFFIX ".dylib"
     INSTALL_NAME_DIR "@rpath"
   )
+elseif(WIN32)
+  set_target_properties(rectangle PROPERTIES
+    OUTPUT_NAME "rectangle"
+    SUFFIX ".dll"
+  )
+  set_target_properties(circle PROPERTIES
+    OUTPUT_NAME "circle"
+    SUFFIX ".dll"
+  )
 else()
   set_target_properties(rectangle PROPERTIES OUTPUT_NAME "rectangle")
   set_target_properties(circle PROPERTIES OUTPUT_NAME "circle")
