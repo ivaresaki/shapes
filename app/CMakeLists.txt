@@ -42,8 +42,10 @@ elseif(WIN32)
   # ensure plugins are available at runtime
   add_custom_command(TARGET app POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
-    ${CMAKE_BINARY_DIR}/lib/rectangle.dll
-    ${CMAKE_BINARY_DIR}/lib/circle.dll
+    ${CMAKE_BINARY_DIR}/lib/Debug/rectangle.dll
+    ${CMAKE_BINARY_DIR}/lib/Debug/circle.dll
+    ${CMAKE_BINARY_DIR}/lib/Release/rectangle.dll
+    ${CMAKE_BINARY_DIR}/lib/Release/circle.dll
     $<TARGET_FILE_DIR:app>
   )
 
